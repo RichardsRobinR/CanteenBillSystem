@@ -47,10 +47,14 @@ namespace CanteenBillSystem
             this.add_Items_TextBox = new System.Windows.Forms.TextBox();
             this.select_item_add_Button = new System.Windows.Forms.Button();
             this.admin_panel_GroupBox = new System.Windows.Forms.GroupBox();
-            this.add_price_TextBox = new System.Windows.Forms.TextBox();
             this.add_item_Label = new System.Windows.Forms.Label();
             this.add_price_label = new System.Windows.Forms.Label();
+            this.add_price_TextBox = new System.Windows.Forms.TextBox();
             this.price_Label = new System.Windows.Forms.Label();
+            this.item_list_ListBox = new System.Windows.Forms.ListBox();
+            this.price_list_ListBox = new System.Windows.Forms.ListBox();
+            this.quantity_list_ListBox = new System.Windows.Forms.ListBox();
+            this.total_list_ListBox = new System.Windows.Forms.ListBox();
             this.admin_panel_GroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -217,13 +221,6 @@ namespace CanteenBillSystem
             this.admin_panel_GroupBox.TabStop = false;
             this.admin_panel_GroupBox.Text = "Admin Panel ";
             // 
-            // add_price_TextBox
-            // 
-            this.add_price_TextBox.Location = new System.Drawing.Point(16, 113);
-            this.add_price_TextBox.Name = "add_price_TextBox";
-            this.add_price_TextBox.Size = new System.Drawing.Size(121, 20);
-            this.add_price_TextBox.TabIndex = 17;
-            // 
             // add_item_Label
             // 
             this.add_item_Label.AutoSize = true;
@@ -242,6 +239,13 @@ namespace CanteenBillSystem
             this.add_price_label.TabIndex = 19;
             this.add_price_label.Text = "Price";
             // 
+            // add_price_TextBox
+            // 
+            this.add_price_TextBox.Location = new System.Drawing.Point(16, 113);
+            this.add_price_TextBox.Name = "add_price_TextBox";
+            this.add_price_TextBox.Size = new System.Drawing.Size(121, 20);
+            this.add_price_TextBox.TabIndex = 17;
+            // 
             // price_Label
             // 
             this.price_Label.AutoSize = true;
@@ -251,11 +255,47 @@ namespace CanteenBillSystem
             this.price_Label.TabIndex = 18;
             this.price_Label.Text = "Price";
             // 
+            // item_list_ListBox
+            // 
+            this.item_list_ListBox.FormattingEnabled = true;
+            this.item_list_ListBox.Location = new System.Drawing.Point(674, 51);
+            this.item_list_ListBox.Name = "item_list_ListBox";
+            this.item_list_ListBox.Size = new System.Drawing.Size(120, 251);
+            this.item_list_ListBox.TabIndex = 19;
+            // 
+            // price_list_ListBox
+            // 
+            this.price_list_ListBox.FormattingEnabled = true;
+            this.price_list_ListBox.Location = new System.Drawing.Point(823, 51);
+            this.price_list_ListBox.Name = "price_list_ListBox";
+            this.price_list_ListBox.Size = new System.Drawing.Size(120, 251);
+            this.price_list_ListBox.TabIndex = 20;
+            // 
+            // quantity_list_ListBox
+            // 
+            this.quantity_list_ListBox.FormattingEnabled = true;
+            this.quantity_list_ListBox.Location = new System.Drawing.Point(976, 51);
+            this.quantity_list_ListBox.Name = "quantity_list_ListBox";
+            this.quantity_list_ListBox.Size = new System.Drawing.Size(120, 251);
+            this.quantity_list_ListBox.TabIndex = 21;
+            // 
+            // total_list_ListBox
+            // 
+            this.total_list_ListBox.FormattingEnabled = true;
+            this.total_list_ListBox.Location = new System.Drawing.Point(674, 308);
+            this.total_list_ListBox.Name = "total_list_ListBox";
+            this.total_list_ListBox.Size = new System.Drawing.Size(120, 251);
+            this.total_list_ListBox.TabIndex = 22;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(648, 558);
+            this.ClientSize = new System.Drawing.Size(1130, 573);
+            this.Controls.Add(this.total_list_ListBox);
+            this.Controls.Add(this.quantity_list_ListBox);
+            this.Controls.Add(this.price_list_ListBox);
+            this.Controls.Add(this.item_list_ListBox);
             this.Controls.Add(this.price_Label);
             this.Controls.Add(this.admin_panel_GroupBox);
             this.Controls.Add(this.total_TextBox);
@@ -307,6 +347,10 @@ namespace CanteenBillSystem
         private System.Windows.Forms.Label add_item_Label;
         private System.Windows.Forms.Label add_price_label;
         private System.Windows.Forms.Label price_Label;
+        private System.Windows.Forms.ListBox item_list_ListBox;
+        private System.Windows.Forms.ListBox price_list_ListBox;
+        private System.Windows.Forms.ListBox quantity_list_ListBox;
+        private System.Windows.Forms.ListBox total_list_ListBox;
     }
 }
 

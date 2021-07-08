@@ -105,7 +105,11 @@ namespace CanteenBillSystem
         public void displayData(int quantity)
         {
 
-
+            this.item_list_ListBox.Items.Add(this.select_item_ComboBox.SelectedItem);
+            this.price_list_ListBox.Items.Add(this.price_TextBox.Text);
+            this.quantity_list_ListBox.Items.Add(this.quantity_TextBox.Text);
+            this.total_list_ListBox.Items.Add(int.Parse(this.price_TextBox.Text) * int.Parse(this.quantity_TextBox.Text));
+            
 
             for (int i = 0; i < pricearraylist.Count; i++)
             {
@@ -156,7 +160,7 @@ namespace CanteenBillSystem
 
         }
 
-        // add button
+        //add button
         private void select_item_add_Button_Click(object sender, EventArgs e)
         {
             if (this.add_Items_TextBox.Text != "" && this.add_price_TextBox.Text != "" )
