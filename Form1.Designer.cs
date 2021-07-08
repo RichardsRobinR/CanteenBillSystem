@@ -34,16 +34,11 @@ namespace CanteenBillSystem
             this.select_item_ComboBox = new System.Windows.Forms.ComboBox();
             this.price_TextBox = new System.Windows.Forms.TextBox();
             this.quantity_TextBox = new System.Windows.Forms.TextBox();
-            this.item_List_TextBox = new System.Windows.Forms.TextBox();
-            this.price_List_TextBox = new System.Windows.Forms.TextBox();
-            this.quantity_List_TextBox = new System.Windows.Forms.TextBox();
-            this.total_List_TextBox = new System.Windows.Forms.TextBox();
             this.calculate_Button = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.total_TextBox = new System.Windows.Forms.TextBox();
             this.add_Items_TextBox = new System.Windows.Forms.TextBox();
             this.select_item_add_Button = new System.Windows.Forms.Button();
             this.admin_panel_GroupBox = new System.Windows.Forms.GroupBox();
@@ -55,6 +50,7 @@ namespace CanteenBillSystem
             this.price_list_ListBox = new System.Windows.Forms.ListBox();
             this.quantity_list_ListBox = new System.Windows.Forms.ListBox();
             this.total_list_ListBox = new System.Windows.Forms.ListBox();
+            this.totalV2_textbox = new System.Windows.Forms.TextBox();
             this.admin_panel_GroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,39 +98,6 @@ namespace CanteenBillSystem
             this.quantity_TextBox.TabIndex = 4;
             this.quantity_TextBox.TextChanged += new System.EventHandler(this.quantity_TextBox_TextChanged);
             // 
-            // item_List_TextBox
-            // 
-            this.item_List_TextBox.Location = new System.Drawing.Point(23, 260);
-            this.item_List_TextBox.Multiline = true;
-            this.item_List_TextBox.Name = "item_List_TextBox";
-            this.item_List_TextBox.Size = new System.Drawing.Size(121, 257);
-            this.item_List_TextBox.TabIndex = 5;
-            this.item_List_TextBox.TextChanged += new System.EventHandler(this.item_List_TextBox_TextChanged);
-            // 
-            // price_List_TextBox
-            // 
-            this.price_List_TextBox.Location = new System.Drawing.Point(184, 258);
-            this.price_List_TextBox.Multiline = true;
-            this.price_List_TextBox.Name = "price_List_TextBox";
-            this.price_List_TextBox.Size = new System.Drawing.Size(118, 257);
-            this.price_List_TextBox.TabIndex = 6;
-            // 
-            // quantity_List_TextBox
-            // 
-            this.quantity_List_TextBox.Location = new System.Drawing.Point(343, 258);
-            this.quantity_List_TextBox.Multiline = true;
-            this.quantity_List_TextBox.Name = "quantity_List_TextBox";
-            this.quantity_List_TextBox.Size = new System.Drawing.Size(119, 257);
-            this.quantity_List_TextBox.TabIndex = 7;
-            // 
-            // total_List_TextBox
-            // 
-            this.total_List_TextBox.Location = new System.Drawing.Point(496, 258);
-            this.total_List_TextBox.Multiline = true;
-            this.total_List_TextBox.Name = "total_List_TextBox";
-            this.total_List_TextBox.Size = new System.Drawing.Size(119, 233);
-            this.total_List_TextBox.TabIndex = 8;
-            // 
             // calculate_Button
             // 
             this.calculate_Button.Location = new System.Drawing.Point(169, 111);
@@ -180,14 +143,6 @@ namespace CanteenBillSystem
             this.label6.Size = new System.Drawing.Size(31, 13);
             this.label6.TabIndex = 13;
             this.label6.Text = "Total";
-            // 
-            // total_TextBox
-            // 
-            this.total_TextBox.Location = new System.Drawing.Point(496, 497);
-            this.total_TextBox.Name = "total_TextBox";
-            this.total_TextBox.Size = new System.Drawing.Size(119, 20);
-            this.total_TextBox.TabIndex = 14;
-            this.total_TextBox.TextChanged += new System.EventHandler(this.total_TextBox_TextChanged);
             // 
             // add_Items_TextBox
             // 
@@ -258,7 +213,7 @@ namespace CanteenBillSystem
             // item_list_ListBox
             // 
             this.item_list_ListBox.FormattingEnabled = true;
-            this.item_list_ListBox.Location = new System.Drawing.Point(674, 51);
+            this.item_list_ListBox.Location = new System.Drawing.Point(24, 264);
             this.item_list_ListBox.Name = "item_list_ListBox";
             this.item_list_ListBox.Size = new System.Drawing.Size(120, 251);
             this.item_list_ListBox.TabIndex = 19;
@@ -266,7 +221,7 @@ namespace CanteenBillSystem
             // price_list_ListBox
             // 
             this.price_list_ListBox.FormattingEnabled = true;
-            this.price_list_ListBox.Location = new System.Drawing.Point(823, 51);
+            this.price_list_ListBox.Location = new System.Drawing.Point(184, 264);
             this.price_list_ListBox.Name = "price_list_ListBox";
             this.price_list_ListBox.Size = new System.Drawing.Size(120, 251);
             this.price_list_ListBox.TabIndex = 20;
@@ -274,7 +229,7 @@ namespace CanteenBillSystem
             // quantity_list_ListBox
             // 
             this.quantity_list_ListBox.FormattingEnabled = true;
-            this.quantity_list_ListBox.Location = new System.Drawing.Point(976, 51);
+            this.quantity_list_ListBox.Location = new System.Drawing.Point(343, 264);
             this.quantity_list_ListBox.Name = "quantity_list_ListBox";
             this.quantity_list_ListBox.Size = new System.Drawing.Size(120, 251);
             this.quantity_list_ListBox.TabIndex = 21;
@@ -282,32 +237,35 @@ namespace CanteenBillSystem
             // total_list_ListBox
             // 
             this.total_list_ListBox.FormattingEnabled = true;
-            this.total_list_ListBox.Location = new System.Drawing.Point(674, 308);
+            this.total_list_ListBox.Location = new System.Drawing.Point(496, 264);
             this.total_list_ListBox.Name = "total_list_ListBox";
-            this.total_list_ListBox.Size = new System.Drawing.Size(120, 251);
+            this.total_list_ListBox.Size = new System.Drawing.Size(120, 225);
             this.total_list_ListBox.TabIndex = 22;
+            // 
+            // totalV2_textbox
+            // 
+            this.totalV2_textbox.Location = new System.Drawing.Point(497, 495);
+            this.totalV2_textbox.Name = "totalV2_textbox";
+            this.totalV2_textbox.Size = new System.Drawing.Size(119, 20);
+            this.totalV2_textbox.TabIndex = 23;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1130, 573);
+            this.ClientSize = new System.Drawing.Size(647, 573);
+            this.Controls.Add(this.totalV2_textbox);
             this.Controls.Add(this.total_list_ListBox);
             this.Controls.Add(this.quantity_list_ListBox);
             this.Controls.Add(this.price_list_ListBox);
             this.Controls.Add(this.item_list_ListBox);
             this.Controls.Add(this.price_Label);
             this.Controls.Add(this.admin_panel_GroupBox);
-            this.Controls.Add(this.total_TextBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.calculate_Button);
-            this.Controls.Add(this.total_List_TextBox);
-            this.Controls.Add(this.quantity_List_TextBox);
-            this.Controls.Add(this.price_List_TextBox);
-            this.Controls.Add(this.item_List_TextBox);
             this.Controls.Add(this.quantity_TextBox);
             this.Controls.Add(this.price_TextBox);
             this.Controls.Add(this.select_item_ComboBox);
@@ -330,16 +288,11 @@ namespace CanteenBillSystem
         private System.Windows.Forms.ComboBox select_item_ComboBox;
         private System.Windows.Forms.TextBox price_TextBox;
         private System.Windows.Forms.TextBox quantity_TextBox;
-        private System.Windows.Forms.TextBox item_List_TextBox;
-        private System.Windows.Forms.TextBox price_List_TextBox;
-        private System.Windows.Forms.TextBox quantity_List_TextBox;
-        private System.Windows.Forms.TextBox total_List_TextBox;
         private System.Windows.Forms.Button calculate_Button;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox total_TextBox;
         private System.Windows.Forms.TextBox add_Items_TextBox;
         private System.Windows.Forms.Button select_item_add_Button;
         private System.Windows.Forms.GroupBox admin_panel_GroupBox;
@@ -351,6 +304,7 @@ namespace CanteenBillSystem
         private System.Windows.Forms.ListBox price_list_ListBox;
         private System.Windows.Forms.ListBox quantity_list_ListBox;
         private System.Windows.Forms.ListBox total_list_ListBox;
+        private System.Windows.Forms.TextBox totalV2_textbox;
     }
 }
 

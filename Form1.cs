@@ -13,11 +13,11 @@ namespace CanteenBillSystem
 {
     public partial class Form1 : Form
     {
-       // int price;
-        int total = 0;
-        int quantitytotal = 0;
-        //int[] pricearray = new int[20] {};
+
         ArrayList pricearraylist = new ArrayList() { 10, 20, 30, 40 };
+        int sum = 0;
+        int count = 0;
+        
 
         public Form1()
         {
@@ -31,6 +31,7 @@ namespace CanteenBillSystem
             this.select_item_ComboBox.Items.Add("Lays");
             this.select_item_ComboBox.Items.Add("Coke");
             this.select_item_ComboBox.Items.Add("Cup Noodles");
+
         }
 
         private void item_List_TextBox_TextChanged(object sender, EventArgs e)
@@ -104,46 +105,29 @@ namespace CanteenBillSystem
 
         public void displayData(int quantity)
         {
-
+            // item list 
             this.item_list_ListBox.Items.Add(this.select_item_ComboBox.SelectedItem);
-            this.price_list_ListBox.Items.Add(this.price_TextBox.Text);
-            this.quantity_list_ListBox.Items.Add(this.quantity_TextBox.Text);
-            this.total_list_ListBox.Items.Add(int.Parse(this.price_TextBox.Text) * int.Parse(this.quantity_TextBox.Text));
             
-
-            for (int i = 0; i < pricearraylist.Count; i++)
-            {
-
-
-                if (i == this.select_item_ComboBox.SelectedIndex)
-                {
-                    quantitytotal = (int)pricearraylist[i] * quantity;
-                    // price list
-                    this.price_List_TextBox.Text = this.price_List_TextBox.Text + pricearraylist[i] + Environment.NewLine;
-                }
-
-            }
-            // int quantitytotal = price * quantity;
-
-            // item list
-            this.item_List_TextBox.Text = this.item_List_TextBox.Text + this.select_item_ComboBox.SelectedItem as string + Environment.NewLine;
-
             // price list
-            //this.price_List_TextBox.Text = this.price_List_TextBox.Text + price + Environment.NewLine;
-
-
+            this.price_list_ListBox.Items.Add(this.price_TextBox.Text);
+            
             // quantity list
-            this.quantity_List_TextBox.Text = this.quantity_List_TextBox.Text + quantity + Environment.NewLine;
+            this.quantity_list_ListBox.Items.Add(this.quantity_TextBox.Text);
+            
+            // total list
+            this.total_list_ListBox.Items.Add(int.Parse(this.price_TextBox.Text) * int.Parse(this.quantity_TextBox.Text));
+           
+            //this.totalV2_textbox.Text = (int.Parse(this.totalV2_textbox.Text) + int.Parse(this.total_list_ListBox.Items[i])).ToString();
+                
+            // implementaion for total amount
+            sum = sum + (int)this.total_list_ListBox.Items[count];
+            count ++; 
+            
+            // dieplay the total
+            this.totalV2_textbox.Text = sum.ToString();
 
-            // quantity total list
-            this.total_List_TextBox.Text = this.total_List_TextBox.Text + quantitytotal + Environment.NewLine;
 
-
-            // total calculation
-            total = total + quantitytotal;
-
-            this.total_TextBox.Text = total.ToString();
-
+            // clear
             this.select_item_ComboBox.Text = "";
             this.price_TextBox.Text = "";
             this.quantity_TextBox.Text = "";
